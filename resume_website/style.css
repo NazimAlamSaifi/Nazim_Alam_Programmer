@@ -102,6 +102,65 @@ h1 { font-size: 4rem; margin: 1.5rem 0; font-weight: 800; letter-spacing: -2px; 
     font-weight: 600;
     display: inline-block;
     transition: 0.3s;
+    cursor: pointer;
+    background: transparent;
+    color: var(--text-main);
+    border: 1px solid rgba(255,255,255,0.06);
 }
-.primary { background: var(--primary); color: #000; }
+.primary { background: var(--primary); color: #000; border: none; }
 .secondary { border: 1px solid var(--text-dim); color: var(--text-main); margin-left: 1rem; }
+
+/* Modal styles for PDF preview */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(2, 6, 23, 0.7);
+  z-index: 2000;
+  padding: 2rem;
+}
+
+.modal-overlay.open { display: flex; }
+
+.modal-content {
+  width: 100%;
+  max-width: 1000px;
+  height: 80vh;
+  background: linear-gradient(180deg, rgba(17,24,39,0.98), rgba(10,12,16,0.96));
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(255,255,255,0.04);
+}
+
+.modal-header, .modal-footer {
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255,255,255,0.02);
+}
+
+.modal-body {
+  flex: 1;
+  background: #0b0f14;
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+}
+
+.modal-body iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: #ffffff;
+}
+
+/* Small screens: make modal full screen */
+@media (max-width: 640px) {
+  .modal-content { height: 100vh; border-radius: 0; }
+  .hero { padding-top: 8rem; }
+}

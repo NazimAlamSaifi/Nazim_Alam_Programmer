@@ -1,91 +1,89 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nazim Alam | Software Developer 2026</title>
-    <!-- Fixed Font Import -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="fonts.googleapis.com" rel="stylesheet">
-    <link rel="stylesheet" href="resume_website/style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Nazim Alam — Portfolio</title>
+  <link rel="stylesheet" href="resume_website/style.css">
 </head>
 <body>
-    <!-- Updated Nav with Blur -->
+
     <nav class="glass-nav">
         <div class="container nav-content">
-            <a href="#" class="logo">NA<span>.</span></a>
+            <a href="#">NA.</a>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Work</a></li>
-                <li><a href="#contact" class="nav-btn">Hire Me</a></li>
+                <li><a href="#contact">Hire Me</a></li>
             </ul>
         </div>
     </nav>
 
-    <header class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <span class="badge">Available for Work 2026</span>
-                <h1>Nazim Alam</h1>
-                <h2 class="typing-text">Crafting Scalable Backend & Interactive Frontend</h2>
-                <p>Specializing in <strong>Ruby</strong> and <strong>JavaScript</strong>. I build reliable systems using TDD principles and clean architecture.</p>
-                <div class="hero-actions">
-                    <a href="https://github.com/NazimAlamSaifi"
-                      class="btn primary"
-                      target="_blank"
-                      rel="noopener">
-                       View Projects
-                    </a>
-                    <a href="your-resume.pdf" class="btn secondary" download>Download CV</a>
-                </div>
-            </div>
-        </div>
-    </header>
-
     <main class="container">
-        <!-- Profile/About Section -->
-        <section id="about" class="reveal">
-            <h3 class="section-title">About Me</h3>
-            <div class="card about-card">
-                <p>I am a self-driven developer with a strong foundation in Mathematics and Computer Science. I follow <strong>Test-Driven Development (TDD)</strong> principles to ensure reliability and bring both technical depth and practical problem-solving skills to every project.</p>
-            </div>
-        </section>
-        
-        <!-- Skills Section - Now using a real Bento Layout -->
-        <section id="skills" class="reveal">
-            <h3 class="section-title">Core Competencies</h3>
-            <div class="bento-grid" id="skills-grid">
-                <!-- JS Populates this -->
+        <section class="hero">
+            <span class="badge">Available for Work 2026</span>
+            <h1>Nazim Alam</h1>
+            <h2>Crafting Scalable Backend &amp; Interactive Frontend</h2>
+            <p>Specializing in <strong>Ruby</strong> and <strong>JavaScript</strong>. I build reliable systems using TDD principles and clean architecture.</p>
+
+            <div class="hero-actions">
+                <a class="btn primary" href="https://github.com/NazimAlamSaifi">View Projects</a>
+                <!-- Open preview modal instead of direct link -->
+                <a id="open-resume" class="btn secondary" href="#">Download CV</a>
             </div>
         </section>
 
-        <section id="projects" class="reveal">
-            <h3 class="section-title">Featured Projects</h3>
-            <div class="project-list" id="projects-grid">
-                <!-- JS Populates this -->
-            </div>
+        <!-- rest of page content... -->
+
+        <section id="about">
+          <h3>About Me</h3>
+          <p>I am a self-driven developer with a strong foundation in Mathematics and Computer Science. I follow <strong>Test-Driven Development (TDD)</strong> principles to ensure reliability and bring both technical depth and practical problem-solving skills to every project.</p>
         </section>
 
-        <section id="contact" class="reveal">
-            <h3 class="section-title">Let's Connect</h3>
-            <div class="contact-grid">
-                <div class="card">
-                    <h4>Contact Info</h4>
-                    <p>📧 <a href="mailto:nazimalamsaifi998@gmail.com" class="link">nazimalamsaifi998@gmail.com</a></p>
-                    <p>📱 +91 70114 12522</p>
-                    <p>📍 North Delhi, Wazirabad</p>
-                </div>
-            </div>
+        <section id="skills">
+          <h3>Core Competencies</h3>
+          <div id="skills-grid" class="bento-grid"></div>
         </section>
+
+        <section id="projects">
+          <h3>Featured Projects</h3>
+          <div id="projects-grid" class="bento-grid"></div>
+        </section>
+
+        <section id="contact">
+          <h3>Let's Connect</h3>
+          <h4>Contact Info</h4>
+          <p>📧 <a href="mailto:nazimalamsaifi998@gmail.com">nazimalamsaifi998@gmail.com</a></p>
+          <p>📱 +91 70114 12522</p>
+          <p>📍 North Delhi, Wazirabad</p>
+        </section>
+
+        <footer>
+          <p>© 2026 Nazim Alam. Built with Semantic HTML5.</p>
+        </footer>
     </main>
 
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Nazim Alam. Built with Semantic HTML5.</p>
+    <!-- PDF Preview Modal -->
+    <div id="pdf-modal" class="modal-overlay" aria-hidden="true" role="dialog" aria-label="Resume preview">
+      <div class="modal-content">
+        <header class="modal-header">
+          <h4>Resume Preview</h4>
+          <button id="pdf-modal-close" class="btn">Close</button>
+        </header>
+
+        <div class="modal-body">
+          <!-- The iframe displays the PDF. src will be set by JS when opening -->
+          <iframe id="pdf-preview" src="" frameborder="0" aria-label="PDF preview"></iframe>
         </div>
-    </footer>
+
+        <footer class="modal-footer">
+          <!-- Download link inside modal - uses download attribute -->
+          <a id="pdf-download" class="btn primary" href="#" download="Nazim_Alam_Resume_2026.pdf">Download</a>
+          <button id="pdf-modal-close-2" class="btn">Close</button>
+        </footer>
+      </div>
+    </div>
 
     <script src="resume_website/script.js"></script>
 </body>

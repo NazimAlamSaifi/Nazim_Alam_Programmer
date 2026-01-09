@@ -38,7 +38,7 @@ const projectData = [
   { 
     name: "Hangman", 
     desc: "I created a professional portfolio site using HTML, CSS, and JavaScript with animations and DOM manipulation to showcase my skills.", 
-    link: "https://github.com/NazimAlamSaifi/Hangman-" 
+    link: "https://github.com/NazimAlamSaifi/Hangman-"
   }
 ];
 
@@ -47,20 +47,20 @@ function initPortfolio() {
     const skillsGrid = document.getElementById('skills-grid');
     // Clear and build
     skillsGrid.innerHTML = skillSet.map(skill => `
-        <div class="card">
-            <div style="font-size: 2rem; margin-bottom: 1rem;">${skill.icon}</div>
+        
+            ${skill.icon}
             <h4>${skill.title}</h4>
-            <p style="color: var(--text-dim); font-size: 0.9rem;">${skill.tech}</p>
-        </div>
+            <p>${skill.tech}</p>
+        
     `).join('');
 
     const projectsGrid = document.getElementById('projects-grid');
     projectsGrid.innerHTML = projectData.map(proj => `
-        <div class="card project-card">
+        
             <h4>${proj.name}</h4>
-            <p style="color: var(--text-dim); margin: 1rem 0;">${proj.desc}</p>
-            <a href="${proj.link}" class="link" target="_blank" rel="noopener">View Case Study →</a>
-        </div>
+            <p>${proj.desc}</p>
+            <a href="${proj.link}">View Case Study →</a>
+        
     `).join('');
 }
 
@@ -76,4 +76,55 @@ const observer = new IntersectionObserver((entries) => {
 document.addEventListener('DOMContentLoaded', () => {
     initPortfolio();
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // ---------- PDF preview & download logic ----------
+    // Path to the resume PDF (put the file in the repo root or update this path)
+    const resumePath = 'Nazim_Alam_Resume_2026.pdf';
+
+    const openBtn = document.getElementById('open-resume');
+    const modal = document.getElementById('pdf-modal');
+    const modalCloseButtons = Array.from(document.querySelectorAll('#pdf-modal-close, #pdf-modal-close-2'));
+    const iframe = document.getElementById('pdf-preview');
+    const downloadLink = document.getElementById('pdf-download');
+
+    // Open preview
+    if (openBtn) {
+      openBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        // set iframe src to preview the PDF
+        iframe.src = resumePath + '#toolbar=0'; // optional fragment to hide PDF toolbar in some viewers
+        downloadLink.href = resumePath;
+        downloadLink.setAttribute('download', 'Nazim_Alam_Resume_2026.pdf');
+        modal.classList.add('open');
+        modal.setAttribute('aria-hidden', 'false');
+      });
+    }
+
+    // Close preview (from multiple buttons)
+    modalCloseButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        modal.classList.remove('open');
+        modal.setAttribute('aria-hidden', 'true');
+        // release iframe src to free memory
+        iframe.src = '';
+      });
+    });
+
+    // Close with Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('open')) {
+        modal.classList.remove('open');
+        modal.setAttribute('aria-hidden', 'true');
+        iframe.src = '';
+      }
+    });
+
+    // Click outside modal-content closes modal
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.remove('open');
+        modal.setAttribute('aria-hidden', 'true');
+        iframe.src = '';
+      }
+    });
 });

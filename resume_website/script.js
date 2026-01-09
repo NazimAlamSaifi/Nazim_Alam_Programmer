@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ---------- PDF preview & download logic ----------
     // Path to the resume PDF (put the file in the repo root or update this path)
-    const resumePath = 'Nazim_Alam_Resume_2026.pdf';
+    const resumePath = 'assets/resume.pdf';
 
     const openBtn = document.getElementById('open-resume');
     const modal = document.getElementById('pdf-modal');
@@ -87,12 +87,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const iframe = document.getElementById('pdf-preview');
     const downloadLink = document.getElementById('pdf-download');
 
-    // Open preview
     if (openBtn) {
       openBtn.addEventListener('click', (e) => {
         e.preventDefault();
-        // set iframe src to preview the PDF
-        iframe.src = resumePath + '#toolbar=0'; // optional fragment to hide PDF toolbar in some viewers
+        iframe.src = resumePath + '#toolbar=0'; 
         downloadLink.href = resumePath;
         downloadLink.setAttribute('download', 'Nazim_Alam_Resume_2026.pdf');
         modal.classList.add('open');
@@ -100,17 +98,14 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // Close preview (from multiple buttons)
     modalCloseButtons.forEach(btn => {
       btn.addEventListener('click', () => {
         modal.classList.remove('open');
         modal.setAttribute('aria-hidden', 'true');
-        // release iframe src to free memory
         iframe.src = '';
       });
     });
 
-    // Close with Escape key
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && modal.classList.contains('open')) {
         modal.classList.remove('open');
@@ -119,7 +114,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Click outside modal-content closes modal
     modal.addEventListener('click', (e) => {
       if (e.target === modal) {
         modal.classList.remove('open');

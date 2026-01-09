@@ -29,12 +29,9 @@
 
             <div class="hero-actions">
                 <a class="btn primary" href="https://github.com/NazimAlamSaifi">View Projects</a>
-                <!-- Open preview modal instead of direct link -->
                 <a id="open-resume" class="btn secondary" href="#">Download CV</a>
             </div>
         </section>
-
-        <!-- rest of page content... -->
 
         <section id="about">
           <h3>About Me</h3>
@@ -64,7 +61,6 @@
         </footer>
     </main>
 
-    <!-- PDF Preview Modal -->
     <div id="pdf-modal" class="modal-overlay" aria-hidden="true" role="dialog" aria-label="Resume preview">
       <div class="modal-content">
         <header class="modal-header">
@@ -73,12 +69,10 @@
         </header>
 
         <div class="modal-body">
-          <!-- The iframe displays the PDF. src will be set by JS when opening -->
           <iframe id="pdf-preview" src="" frameborder="0" aria-label="PDF preview"></iframe>
         </div>
 
         <footer class="modal-footer">
-          <!-- Download link inside modal - uses download attribute -->
           <a id="pdf-download" class="btn primary" href="#" download="Nazim_Alam_Resume_2026.pdf">Download</a>
           <button id="pdf-modal-close-2" class="btn">Close</button>
         </footer>

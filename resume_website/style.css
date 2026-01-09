@@ -12,7 +12,7 @@
     margin-top: 2.5rem;
     display: flex;
     justify-content: center;
-    gap: 1.5rem;   /* space between buttons */
+    gap: 1.5rem;   
     margin-left: 1rem;
 }
 
@@ -27,7 +27,6 @@ body {
 
 .container { max-width: 1000px; margin: 0 auto; padding: 0 1.5rem; }
 
-/* 2026 Glassmorphism Navigation */
 .glass-nav {
     position: fixed;
     top: 0; width: 100%;
@@ -49,7 +48,6 @@ body {
 .nav-links a { color: var(--text-dim); text-decoration: none; transition: 0.3s; font-size: 0.9rem; }
 .nav-links a:hover { color: var(--primary); }
 
-/* Hero Styling */
 .hero { padding: 10rem 0 5rem; text-align: center; }
 .badge {
     background: var(--primary-glow);
@@ -63,7 +61,6 @@ body {
 
 h1 { font-size: 4rem; margin: 1.5rem 0; font-weight: 800; letter-spacing: -2px; }
 
-/* Bento Grid Optimization */
 .bento-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -80,7 +77,6 @@ h1 { font-size: 4rem; margin: 1.5rem 0; font-weight: 800; letter-spacing: -2px; 
     margin-bottom: 10px;
 }
 
-/* Make some cards bigger for the "Bento" look */
 .bento-grid div:nth-child(1) { grid-column: span 2; grid-row: span 2; }
 .bento-grid div:nth-child(4) { grid-column: span 2; }
 
@@ -94,7 +90,6 @@ h1 { font-size: 4rem; margin: 1.5rem 0; font-weight: 800; letter-spacing: -2px; 
 .reveal { opacity: 0; transform: translateY(30px); transition: 0.8s ease-out; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
-/* Buttons */
 .btn {
     padding: 0.8rem 2rem;
     border-radius: 12px;
@@ -110,7 +105,6 @@ h1 { font-size: 4rem; margin: 1.5rem 0; font-weight: 800; letter-spacing: -2px; 
 .primary { background: var(--primary); color: #000; border: none; }
 .secondary { border: 1px solid var(--text-dim); color: var(--text-main); margin-left: 1rem; }
 
-/* Modal styles for PDF preview */
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -159,7 +153,6 @@ h1 { font-size: 4rem; margin: 1.5rem 0; font-weight: 800; letter-spacing: -2px; 
   background: #ffffff;
 }
 
-/* Small screens: make modal full screen */
 @media (max-width: 640px) {
   .modal-content { height: 100vh; border-radius: 0; }
   .hero { padding-top: 8rem; }

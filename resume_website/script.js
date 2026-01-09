@@ -45,7 +45,6 @@ const projectData = [
 
 function initPortfolio() {
     const skillsGrid = document.getElementById('skills-grid');
-    // Clear and build
     skillsGrid.innerHTML = skillSet.map(skill => `
         
             ${skill.icon}
@@ -64,7 +63,6 @@ function initPortfolio() {
     `).join('');
 }
 
-// Optimized Intersection Observer
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -77,8 +75,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initPortfolio();
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    // ---------- PDF preview & download logic ----------
-    // Path to the resume PDF (put the file in the repo root or update this path)
     const resumePath = 'assets/resume.pdf';
 
     const openBtn = document.getElementById('open-resume');

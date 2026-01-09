@@ -4,81 +4,84 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Nazim Alam — Portfolio</title>
+
+  <!-- stylesheet the repo contains -->
   <link rel="stylesheet" href="resume_website/style.css">
 </head>
 <body>
 
-    <nav class="glass-nav">
-        <div class="container nav-content">
-            <a href="#">NA.</a>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Work</a></li>
-                <li><a href="#contact">Hire Me</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <main class="container">
-        <section class="hero">
-            <span class="badge">Available for Work 2026</span>
-            <h1>Nazim Alam</h1>
-            <h2>Crafting Scalable Backend &amp; Interactive Frontend</h2>
-            <p>Specializing in <strong>Ruby</strong> and <strong>JavaScript</strong>. I build reliable systems using TDD principles and clean architecture.</p>
-
-            <div class="hero-actions">
-                <a class="btn primary" href="https://github.com/NazimAlamSaifi">View Projects</a>
-                <a id="open-resume" class="btn secondary" href="#">Download CV</a>
-            </div>
-        </section>
-
-        <section id="about">
-          <h3>About Me</h3>
-          <p>I am a self-driven developer with a strong foundation in Mathematics and Computer Science. I follow <strong>Test-Driven Development (TDD)</strong> principles to ensure reliability and bring both technical depth and practical problem-solving skills to every project.</p>
-        </section>
-
-        <section id="skills">
-          <h3>Core Competencies</h3>
-          <div id="skills-grid" class="bento-grid"></div>
-        </section>
-
-        <section id="projects">
-          <h3>Featured Projects</h3>
-          <div id="projects-grid" class="bento-grid"></div>
-        </section>
-
-        <section id="contact">
-          <h3>Let's Connect</h3>
-          <h4>Contact Info</h4>
-          <p>📧 <a href="mailto:nazimalamsaifi998@gmail.com">nazimalamsaifi998@gmail.com</a></p>
-          <p>📱 +91 70114 12522</p>
-          <p>📍 North Delhi, Wazirabad</p>
-        </section>
-
-        <footer>
-          <p>© 2026 Nazim Alam. Built with Semantic HTML5.</p>
-        </footer>
-    </main>
-
-    <div id="pdf-modal" class="modal-overlay" aria-hidden="true" role="dialog" aria-label="Resume preview">
-      <div class="modal-content">
-        <header class="modal-header">
-          <h4>Resume Preview</h4>
-          <button id="pdf-modal-close" class="btn">Close</button>
-        </header>
-
-        <div class="modal-body">
-          <iframe id="pdf-preview" src="" frameborder="0" aria-label="PDF preview"></iframe>
-        </div>
-
-        <footer class="modal-footer">
-          <a id="pdf-download" class="btn primary" href="#" download="Nazim_Alam_Resume_2026.pdf">Download</a>
-          <button id="pdf-modal-close-2" class="btn">Close</button>
-        </footer>
-      </div>
+  <nav class="glass-nav">
+    <div class="container nav-content">
+      <a href="#">NA.</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Work</a></li>
+        <li><a href="#contact">Hire Me</a></li>
+      </ul>
     </div>
+  </nav>
 
-    <script src="resume_website/script.js"></script>
+  <main class="container">
+    <section class="hero">
+      <span class="badge">Available for Work 2026</span>
+      <h1>Nazim Alam</h1>
+      <h2>Crafting Scalable Backend &amp; Interactive Frontend</h2>
+      <p>Specializing in <strong>Ruby</strong> and <strong>JavaScript</strong>. I build reliable systems using TDD principles and clean architecture.</p>
+
+      <div class="hero-actions">
+        <a class="btn primary" href="https://github.com/NazimAlamSaifi">View Projects</a>
+        <a id="open-resume" class="btn secondary" href="#">Download CV</a>
+      </div>
+    </section>
+
+    <section id="about" class="reveal">
+      <h3>About Me</h3>
+      <p>I am a self-driven developer with a strong foundation in Mathematics and Computer Science. I follow <strong>Test-Driven Development (TDD)</strong> principles to ensure reliability and bring both technical depth and practical problem-solving skills to every project.</p>
+    </section>
+
+    <section id="skills" class="reveal">
+      <h3>Core Competencies</h3>
+      <div id="skills-grid" class="bento-grid"></div>
+    </section>
+
+    <section id="projects" class="reveal">
+      <h3>Featured Projects</h3>
+      <div id="projects-grid" class="bento-grid"></div>
+    </section>
+
+    <section id="contact" class="reveal">
+      <h3>Let's Connect</h3>
+      <h4>Contact Info</h4>
+      <p>📧 <a href="mailto:nazimalamsaifi998@gmail.com">nazimalamsaifi998@gmail.com</a></p>
+      <p>📱 +91 70114 12522</p>
+      <p>📍 North Delhi, Wazirabad</p>
+    </section>
+
+    <footer>
+      <p>© 2026 Nazim Alam. Built with Semantic HTML5.</p>
+    </footer>
+  </main>
+
+  <!-- PDF Preview Modal (used by script.js) -->
+  <div id="pdf-modal" class="modal-overlay" aria-hidden="true" role="dialog" aria-label="Resume preview">
+    <div class="modal-content">
+      <header class="modal-header">
+        <h4>Resume Preview</h4>
+        <button id="pdf-modal-close" class="btn">Close</button>
+      </header>
+
+      <div class="modal-body">
+        <iframe id="pdf-preview" src="" frameborder="0" aria-label="PDF preview"></iframe>
+      </div>
+
+      <footer class="modal-footer">
+        <a id="pdf-download" class="btn primary" href="#" download>Download</a>
+        <button id="pdf-modal-close-2" class="btn">Close</button>
+      </footer>
+    </div>
+  </div>
+
+  <script src="resume_website/script.js"></script>
 </body>
 </html>
